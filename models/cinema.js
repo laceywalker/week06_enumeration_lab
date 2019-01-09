@@ -20,6 +20,12 @@ Cinema.prototype.findByGenre = function (genre) {
   return this.films.filter(film => film.genre === genre);
 };
 
+//  CHECK BY YEAR - TWO FUNCTIONS BELOW //
+Cinema.prototype.checkByYear = function (year) {
+  const returnedFilm = this.films.some(film => film.year === year)
+  return returnedFilm
+};
+
 Cinema.prototype.checkByYear = function (year) {
   const returnedFilm = this.films.filter(film => film.year === year);
   if (returnedFilm.length >= 1) {
@@ -29,6 +35,7 @@ Cinema.prototype.checkByYear = function (year) {
     return false
   }
 };
+ //    END    //
 
 Cinema.prototype.checkByLength = function (length) {
   return this.films.every(film => film.length > length);
