@@ -11,10 +11,18 @@ Cinema.prototype.listOfFilmTitles = function (films) {
   return filmTitles;
 };
 
+//  RETURN FILM BY TITLE - TWO FUNCTIONS BELOW //
 Cinema.prototype.findByTitle = function (title) {
   const filmTitle = this.films.filter(film => film.title === title);
   return filmTitle[0];
 };
+
+Cinema.prototype.findByTitle = function (title) {
+  const filmTitle = this.films.find(film => film.title === title);
+  return filmTitle;
+};
+
+  //     END    //
 
 Cinema.prototype.findByGenre = function (genre) {
   return this.films.filter(film => film.genre === genre);
