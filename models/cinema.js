@@ -17,8 +17,7 @@ Cinema.prototype.findByTitle = function (title) {
 };
 
 Cinema.prototype.findByGenre = function (genre) {
-  const filmGenre = this.films.filter(film => film.genre === genre);
-  return filmGenre;
+  return this.films.filter(film => film.genre === genre);
 };
 
 Cinema.prototype.checkByYear = function (year) {
@@ -32,6 +31,15 @@ Cinema.prototype.checkByYear = function (year) {
 };
 
 Cinema.prototype.checkByLength = function (length) {
-  const returnedLength = this.films.every(film => film.length > length);
-  return returnedLength;
+  return this.films.every(film => film.length > length);
+};
+
+Cinema.prototype.totalRunningTime = function (films) {
+  let filmTimes = films.map((film) => {
+    return film.length;
+  });
+  const totalFilmTime = filmTimes.reduce((totalLength, filmLength) => {
+    return totalLength + filmLength
+  }, 0);
+  return totalFilmTime;
 };
