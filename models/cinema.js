@@ -18,5 +18,15 @@ Cinema.prototype.findByTitle = function (title) {
 
 Cinema.prototype.findByGenre = function (genre) {
   const filmGenre = this.films.filter(film => film.genre === genre);
-  return filmGenre
+  return filmGenre;
+};
+
+Cinema.prototype.checkByYear = function (year) {
+  const returnedFilm = this.films.filter(film => film.year === year);
+  if (returnedFilm.length >= 1) {
+  return true;
+  }
+  else {
+    return false
+  }
 };
