@@ -30,3 +30,8 @@ Cinema.prototype.checkByYear = function (year) {
     return false
   }
 };
+
+Cinema.prototype.checkByLength = function (length) {
+  const returnedLength = this.films.every(film => film.length > length);
+  return returnedLength;
+};
