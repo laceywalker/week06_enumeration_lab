@@ -12,6 +12,9 @@ Cinema.prototype.listOfFilmTitles = function (films) {
 };
 
 //  RETURN FILM BY TITLE - TWO FUNCTIONS BELOW //
+//  filter creates a new array with the returned items - trapped //
+//  find returns the first VALUE which matches the argument, the object //
+
 Cinema.prototype.findByTitle = function (title) {
   const filmTitle = this.films.filter(film => film.title === title);
   return filmTitle[0];
